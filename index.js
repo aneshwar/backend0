@@ -1,10 +1,10 @@
 
-
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 
 const app = express()
-const port = 8080 || 3000
+const port = process.env.PORT
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 app.use(bodyParser.urlencoded())
