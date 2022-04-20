@@ -20,7 +20,7 @@ const studentSchema = new mongoose.Schema({
 })
 const Student = new mongoose.model('photos', studentSchema);
 
-app.get('/', (req,res) => {
+app.get('/home', (req,res) => {
     Student.find({}, (err, docs)=> {
        res.json(docs)
    })
