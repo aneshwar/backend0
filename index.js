@@ -19,7 +19,7 @@ const studentSchema = new mongoose.Schema({
    subject: String,
 })
 const Student = new mongoose.model('photos', studentSchema);
-
+const Studentapi = new mongoose.model('posts', studentSchema);
 app.get('/home', (req,res) => {
     Student.find({}, (err, docs)=> {
        res.json(docs)
@@ -27,7 +27,11 @@ app.get('/home', (req,res) => {
 
 })
 
-
+app.get('/api', (req, res) => {
+    Studentapi.find({}, (err, docs)=> {
+        res.json(docs)
+})
+})
 
 app.listen(port, () => {
     console.log(`concted:${port}`)
